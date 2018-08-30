@@ -1,0 +1,21 @@
+{
+  "name": "vuepress-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs",
+    "deploy": "gh-pages -d dist",
+    "deploy:build": "npm run docs:build && gh-pages -d dist"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "element-ui": "^2.3.8",
+    "vue": "^2.5.16",
+    "markdown-it": "^8.4.1",
+    "markdown-it-emoji": "^1.4.0",
+    "markdown-it-katex": "^2.0.3"
+  }
+}
