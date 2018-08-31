@@ -7,11 +7,15 @@ module.exports = {
     // 添加导航栏
     nav: [
       { text: '首页', link: '/' },
-      { text: '文章', link: '/guide/' }
+      { text: '文章',
+        items: [
+          { text: '2018', link: '/2018/' }
+        ]
+      }
     ],
     // 为以下路由添加侧边栏
     sidebar: {
-      '/guide/': genSidebarConfig('Guide')
+      '/2018/': genSidebarConfig('2018')
     }
   },
   markdown: {
@@ -29,7 +33,7 @@ function genSidebarConfig(title) {
     {
       title,
       collapsable: false,
-      children: ['', '20180830']
+      children: ['', 'starter', 'schema', 'use', 'validator']
     }
   ]
 }
