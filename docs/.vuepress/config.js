@@ -1,8 +1,8 @@
 module.exports = {
-  title: 'zarm-vue', // 设置网站标题
+  title: 'Blog', // 设置网站标题
   dest: './dist', // 设置输出目录
-  base: '/', // 设置站点根路径
-  repo: 'https://github.com/ZhonganTechENG/zarm-vue', // 添加 github 链接
+  base: '/Blog/', // 设置站点根路径
+  repo: 'https://github.com/chuanshuoye/Blog.git', // 添加 github 链接
   themeConfig: {
     // 添加导航栏
     nav: [
@@ -29,7 +29,7 @@ function genSidebarConfig(title) {
     {
       title,
       collapsable: false,
-      children: ['', '20180830','20180901']
+      children: ['', '20180830']
     }
   ]
 }
