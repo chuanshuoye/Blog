@@ -2,7 +2,36 @@
 
 ### 因果事件校验模型
 
-传统的交互逻辑校验一般使用Validate对象，内置了一些业务规则逻辑，开发者使用IFFE模式根据实际业务场景，业务逻辑层层判断后，单独返回验证结果来处理；当项目复杂度上升时，整个校验链条会变的杂乱无序，基于数据驱动框架（Vue，React）等的数据状态流会变得无法追溯每个对象改变后发生的关联事件；
+传统的交互逻辑校验一般使用Validate对象，内置了一些业务规则逻辑，开发者根据实际业务场景，业务逻辑层层判断后，单独返回验证结果来处理；当项目复杂度上升时，整个校验链条会变的杂乱无序，基于数据驱动框架（Vue，React）等的数据状态流会变得无法追溯每个对象改变后发生的关联事件；
+
+案例:
+
+ ```js
+// 校验投保人
+validForm() {
+    let self = this
+    self.validResult = true
+    if (self.validResult) {
+        self.validName()
+    }
+    if (self.validResult) {
+        self.validCertiType()
+    }
+    if (self.validResult) {
+        self.validCertiNo()
+    }
+    if (self.validResult) {
+        self.validBirth()
+    }
+    if (self.validResult) {
+        self.validSex()
+    }
+    if (self.validResult) {
+        self.validPhone()
+    }
+},
+
+ ```
 
 
 ### 因果事件链

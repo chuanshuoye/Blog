@@ -1,9 +1,6 @@
 <template>
   <div class="home">
     <div class="wrapper">
-      <div class="avatar">
-        <img :src="$withBase(data.avatar)" alt="">
-      </div>
       <div class="card">
         <div class="bio">
           <div class="head">
@@ -16,22 +13,11 @@
               {{data.info}}
             </span>
           </div>
-          <div class="description">
-            <Content/>
-          </div>
         </div>
         <div class="interests">
           <span>
             {{data.interests}}
           </span>
-        </div>
-        <div class="socials">
-          <div v-for="item in data.socials">
-            <a :href="item.link" target="_blank">
-              <img :src="'/icons/'+item.title+'.svg'" :alt="item.title"
-              :title="item.title" />
-            </a>
-          </div>
         </div>
         <div class="actions">
           <div v-for="item in data.actions">

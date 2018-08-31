@@ -4,8 +4,16 @@
 ```js
 
 const Case = new SchemaModel({
-  policyHolderName: StringType().isRequired('policyHolderName is Required!'),
-  policyHolderCardNo: StringType().pattern('^.*?/g', 'policyHolderCardNo is valid!')
+  policyHolderName: {
+    type: String,
+    required: true,
+    message: 'policyHolderName is Required!'
+  }
+  policyHolderCardNo: {
+    type: String,
+    pattern: '^.*?/g',
+    message: 'policyHolderCardNo is valid!'
+  }
 })
 
 Case.check({
@@ -21,10 +29,14 @@ Case.check({
 
 ```js
 const Case = new SchemaModel({
-  insureHolderRelation: StringType().isRequired('insureHolderRelation is Required!'),
-  insureHolderSex: (val, [model]) => {
+  insureHolderRelation: {
+    type: String,
+    required: true,
+    message: 'insureHolderRelation is Required!'
+  },
+  insureHolderSex: (val, data) => {
     // 判断被保人关系与性别的处理
-    if (model.insureHolderRelation === '丈夫') {
+    if (data.insureHolderRelation === '丈夫') {
       if (val === '男') return '被保人性别不可为男性！'
     }
     return true
