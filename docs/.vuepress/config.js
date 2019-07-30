@@ -44,7 +44,7 @@ function genSidebarConfig(title) {
       {
         title,
         collapsable: false,
-        children: ['', '09', '0901']
+        children: ['', '06', '0601']
       }
     ]
   }
